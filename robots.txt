@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /feedback.html
+Disallow: /datamap/
+Disallow: /manuals/
+Disallow: /translations/
+Disallow: /publications/
+Disallow: /worksheets/
+
+Sitemap: https://wisescales.org/sitemap.xml
