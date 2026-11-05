@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Try the New WISE Tools</title>
+<style>
+  :root {
+    --ink: #1d1d24;
+    --muted: #5d5d6b;
+    --line: #d9d9e0;
+    --accent: #1d1d24;
+    --step: #f4f4f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #fff;
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  main { max-width: 36rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  .eyebrow { margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--muted); }
+  h1 { margin: 0 0 0.75rem; font-size: 1.75rem; line-height: 1.2; }
+  .intro { margin: 0 0 2rem; color: var(--muted); }
+  ol { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .step {
+    counter-increment: step;
+    position: relative;
+    margin: 0 0 1rem;
+    padding: 1.25rem 1.25rem 1.25rem 4rem;
+    background: var(--step);
+    border-radius: 0.75rem;
+  }
+  .step::before {
+    content: counter(step);
+    position: absolute;
+    left: 1.25rem;
+    top: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    line-height: 2rem;
+  }
+  h2 { margin: 0.15rem 0 0.35rem; font-size: 1.2rem; }
+  .step p { margin: 0 0 1rem; color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .btn {
+    display: inline-block;
+    padding: 0.65rem 1.1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary { border: 1.5px solid var(--accent); color: var(--accent); background: #fff; }
+  .btn:hover { opacity: 0.85; }
+  .btn:focus-visible { outline: 3px solid #4c7cf0; outline-offset: 2px; }
+  .callout {
+    margin: 0 0 1rem;
+    padding: 0.85rem 1rem;
+    background: #fff;
+    border-left: 4px solid var(--accent);
+    border-radius: 0.5rem;
+  }
+  .step .callout p { margin: 0; color: var(--ink); }
+  .step .callout .callout-title { margin-bottom: 0.2rem; font-size: 1.05rem; font-weight: 700; }
+  .callout a { color: inherit; font-weight: 600; }
+  .note { margin: 2rem 0 0; font-size: 0.9rem; color: var(--muted); }
+  .note a { color: inherit; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">WISE Scales &middot; Friends and family preview</p>
+  <h1>Help us test our new tools</h1>
+  <p class="intro">Thank you for taking an early look. Please try each tool in order. After each one, use the feedback button to tell us what you think. It&rsquo;s the same form each time.</p>
+
+  <ol>
+    <li class="step">
+      <h2>Explore the map</h2>
+      <p>See where the WISE Scales have been used around the world.</p>
+      <div class="callout">
+        <p class="callout-title">Is your site on there?</p>
+        <p>If not, tell us where you used the WISE Scales in the <a href="https://forms.gle/hKy4kwgi2NLFfc2WA" target="_blank" rel="noopener">feedback form<span class="sr"> (opens in new tab)</span></a>.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://jaimiechun.github.io/lib-map-v2/" target="_blank" rel="noopener">Open the map<span class="sr"> (opens in new tab)</span></a>
+        <a class="btn btn-secondary" href="https://forms.gle/hKy4kwgi2NLFfc2WA" target="_blank" rel="noopener">Give feedback<span class="sr"> on the map (opens in new tab)</span></a>
+      </div>
+    </li>
+    <li class="step">
+      <h2>Try the chatbot</h2>
+      <p>Ask our beta chatbot anything about the WISE Scales.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://01a0e418-06f1-4a37-151e-0a858a8bbb8a.share.connect.posit.cloud/" target="_blank" rel="noopener">Open the chatbot<span class="sr"> (opens in new tab)</span></a>
+        <a class="btn btn-secondary" href="https://forms.gle/hKy4kwgi2NLFfc2WA" target="_blank" rel="noopener">Give feedback<span class="sr"> on the chatbot (opens in new tab)</span></a>
+      </div>
+    </li>
+    <li class="step">
+      <h2>Browse the website</h2>
+      <p>A preview of the new WISE Scales website.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="index.html" target="_blank" rel="noopener">Open the website<span class="sr"> (opens in new tab)</span></a>
+        <a class="btn btn-secondary" href="https://forms.gle/hKy4kwgi2NLFfc2WA" target="_blank" rel="noopener">Give feedback<span class="sr"> on the website (opens in new tab)</span></a>
+      </div>
+    </li>
+  </ol>
+
+  <p class="note">Questions? Email <a href="mailto:WISE_Scales@northwestern.edu">WISE_Scales@northwestern.edu</a>.</p>
+</main>
+</body>
+</html>

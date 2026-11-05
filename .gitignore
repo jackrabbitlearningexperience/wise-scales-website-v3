@@ -1,0 +1,13 @@
+.DS_Store
+# Working docs and reference material: never published (Pages serves the whole repo)
+*.md
+reference/
+Project Context and History/
+assets/Sera Young background.jpeg
+assets/sera-young cropped.jpg
+
+# Not published: internal tooling and the redirect map live in the archive repo
+tools/
+_redirects
+# Raw photo drop from the course Drive: unreferenced and permissions unresolved
+assets/photos/
