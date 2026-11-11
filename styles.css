@@ -662,12 +662,19 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
 .is-fountain-cover .wp-cover__media { object-position: 50% 35%; }
 
 /* ---------- See the Impact: map hero (Cover with the map image) ---------- */
-/* Data map module: the map as its own section, not hero decoration */
-.datamap__preview { display: block; margin-top: var(--wp--preset--spacing--40); border: 1px solid var(--wp--preset--color--hairline); border-radius: var(--wp--custom--radius); overflow: hidden; background: var(--wp--preset--color--white); transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+/* Data map module: the map as its own section, not hero decoration.
+   It sits beside its text rather than spanning the page, so it reads as an
+   invitation to open the live map rather than as a banner. */
+.datamap .columns { gap: clamp(2rem, 5vw, 4rem); }
+.datamap h2 { margin-bottom: 0.5rem; }
+.datamap__preview { position: relative; display: block; max-width: 32rem; margin-inline: auto; border: 1px solid var(--wp--preset--color--hairline); border-radius: var(--wp--custom--radius); overflow: hidden; background: var(--wp--preset--color--white); box-shadow: 0 6px 18px rgb(15 16 26 / 0.08); transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
 .datamap__preview img { display: block; width: 100%; height: auto; }
-.datamap__preview:hover { border-color: var(--wp--preset--color--blue); box-shadow: 0 10px 30px rgb(15 16 26 / 0.12); }
-.datamap__preview:focus-visible { outline: 3px solid var(--wp--preset--color--warm); outline-offset: 4px; }
-.datamap__cta { margin-top: var(--wp--preset--spacing--30); }
+.datamap__cue { position: absolute; left: 0.8rem; bottom: 0.8rem; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.9rem; border-radius: 999px; background: var(--wp--preset--color--white); color: var(--wp--preset--color--ink); font-family: var(--wp--preset--font-family--heading); font-weight: 600; font-size: 0.85rem; box-shadow: 0 2px 10px rgb(15 16 26 / 0.18); transition: background-color 0.2s ease, color 0.2s ease; }
+.datamap__cue::after { content: "\2192"; transition: transform 0.15s ease; }
+.datamap__preview:hover { transform: translateY(-3px); border-color: var(--wp--preset--color--blue); box-shadow: 0 14px 30px rgb(15 16 26 / 0.16); }
+.datamap__preview:hover .datamap__cue { background: var(--wp--preset--color--warm); color: var(--wp--preset--color--night); }
+.datamap__preview:hover .datamap__cue::after { transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) { .datamap__preview, .datamap__cue, .datamap__cue::after { transition: none; } .datamap__preview:hover { transform: none; } }
 
 .is-map-cover { background: var(--wp--preset--color--blue-deep); }
 .is-map-cover .wp-cover__media { object-position: 50% 35%; }

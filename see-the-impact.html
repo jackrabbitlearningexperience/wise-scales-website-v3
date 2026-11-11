@@ -90,13 +90,20 @@
 
 <!-- Pattern: Data map (Group on paper: Heading + Paragraph + a linked Image preview + Buttons; the preview opens the live WISE data map in a new tab) -->
 <section class="section has-paper-background-color is-layout-constrained datamap" id="map">
-  <h2 class="alignwide">Find WISE data on the map</h2>
-  <p class="lede alignwide">Every country and local study site where the WISE Scales have been used, with the source behind each one.</p>
-  <a class="datamap__preview alignwide" href="https://jaimiechun.github.io/lib-map-v2/" target="_blank" rel="noopener">
-    <img src="assets/map-world.webp" width="1404" height="850" alt="World map of the countries and study sites where WISE data has been collected" loading="lazy">
-  </a>
-  <div class="buttons alignwide datamap__cta">
-    <a class="button is-style-fill" href="https://jaimiechun.github.io/lib-map-v2/" target="_blank" rel="noopener">Explore the map<span class="screen-reader-text"> (opens in new tab)</span></a>
+  <div class="columns alignwide are-vertically-aligned-center">
+    <div class="column">
+      <h2>Find WISE data on the map</h2>
+      <p class="lede">Every country and local study site where the WISE Scales have been used, with the source behind each one.</p>
+      <div class="buttons">
+        <a class="button is-style-fill" href="https://jaimiechun.github.io/lib-map-v2/" target="_blank" rel="noopener">Explore the map<span class="screen-reader-text"> (opens in new tab)</span></a>
+      </div>
+    </div>
+    <div class="column">
+      <a class="datamap__preview" href="https://jaimiechun.github.io/lib-map-v2/" target="_blank" rel="noopener">
+        <img src="assets/map-world.webp" width="1404" height="850" alt="" loading="lazy">
+        <span class="datamap__cue">Open the live map<span class="screen-reader-text"> (opens in new tab)</span></span>
+      </a>
+    </div>
   </div>
 </section>
 
