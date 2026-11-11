@@ -103,8 +103,8 @@ h1, h2, h3, h4 {
 }
 p { margin: 0 0 var(--wp--preset--spacing--30); text-wrap: pretty; }
 img, video { max-width: 100%; height: auto; display: block; }
-a { color: var(--wp--preset--color--blue); }
-a:hover { color: var(--wp--preset--color--blue-dark); }
+a { color: inherit; text-decoration-color: var(--wp--preset--color--warm); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 3px; }
 button { font-family: inherit; }
 ::selection { background: var(--wp--preset--color--warm); color: var(--wp--preset--color--night); }
 /* Focus ring readable on light and dark: warm outline with a dark inner ring */
@@ -435,7 +435,7 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
 .is-style-arrow a::after {
   content: "";
   width: 1.1em; height: 1.1em;
-  background: currentColor;
+  background: var(--wp--preset--color--warm);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
   transition: transform 0.15s ease;
@@ -660,6 +660,13 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
 .is-fountain-cover .wp-cover__media { object-position: 50% 35%; }
 
 /* ---------- See the Impact: map hero (Cover with the map image) ---------- */
+/* Data map module: the map as its own section, not hero decoration */
+.datamap__preview { display: block; margin-top: var(--wp--preset--spacing--40); border: 1px solid var(--wp--preset--color--hairline); border-radius: var(--wp--custom--radius); overflow: hidden; background: var(--wp--preset--color--white); transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+.datamap__preview img { display: block; width: 100%; height: auto; }
+.datamap__preview:hover { border-color: var(--wp--preset--color--blue); box-shadow: 0 10px 30px rgb(15 16 26 / 0.12); }
+.datamap__preview:focus-visible { outline: 3px solid var(--wp--preset--color--warm); outline-offset: 4px; }
+.datamap__cta { margin-top: var(--wp--preset--spacing--30); }
+
 .is-map-cover { background: var(--wp--preset--color--blue-deep); }
 .is-map-cover .wp-cover__media { object-position: 50% 35%; }
 .page-cover.is-map-cover::before { background: linear-gradient(180deg, rgb(13 70 119 / 0.15) 0%, rgb(13 70 119 / 0.35) 45%, rgb(13 70 119 / 0.92) 100%); }
@@ -775,9 +782,9 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
 }
 .button:hover { transform: translateY(-2px); }
 .button.is-style-fill { background: var(--wp--preset--color--warm); color: var(--wp--preset--color--night); }
-.button.is-style-fill:hover { background: var(--wp--preset--color--white); color: var(--wp--preset--color--night); }
-.button.is-style-outline { border: 2px solid currentColor; color: inherit; }
-.button.is-style-outline:hover { color: var(--wp--preset--color--warm); }
+.button.is-style-fill:hover { background: var(--wp--preset--color--night); color: var(--wp--preset--color--warm); }
+.button.is-style-outline { border: 2px solid var(--wp--preset--color--warm); color: inherit; }
+.button.is-style-outline:hover { background: var(--wp--preset--color--warm); color: var(--wp--preset--color--night); }
 
 /* ---------- Inner page hero with photo (Cover) ---------- */
 .page-cover { min-height: clamp(22rem, 55vh, 34rem); align-items: flex-end; --cover-overlay: var(--wp--preset--gradient--read-bottom); }
@@ -992,7 +999,7 @@ html:not(.js) .selector__reset { display: none; }
 .panel__avatar { width: 5.5rem; height: 5.5rem; border-radius: 50%; object-fit: cover; border: 3px solid var(--wp--preset--color--white); margin-bottom: var(--wp--preset--spacing--40); }
 .is-style-panel .panel__links { list-style: none; margin: auto 0 0; padding: var(--wp--preset--spacing--40) 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .is-style-panel .panel__links li + li { margin-top: 0; }
-.panel__links a { display: inline-block; padding: 0.45rem 1rem; border: 2px solid currentColor; border-radius: 999px; color: inherit; text-decoration: none; font-family: var(--wp--preset--font-family--heading); font-weight: 500; font-size: 0.95rem; }
+.panel__links a { display: inline-block; padding: 0.45rem 1rem; border: 2px solid var(--wp--preset--color--warm); border-radius: 999px; color: inherit; text-decoration: none; font-family: var(--wp--preset--font-family--heading); font-weight: 500; font-size: 0.95rem; }
 .panel__links a:hover { background: var(--wp--preset--color--white); color: var(--wp--preset--color--ink); }
 .panel__label { margin-top: auto; padding-top: var(--wp--preset--spacing--40); font-family: var(--wp--preset--font-family--heading); font-weight: 600; color: var(--wp--preset--color--warm); }
 .contact p:not([class]), .contact ul { font-size: var(--wp--preset--font-size--medium); line-height: 1.5; }
@@ -1094,6 +1101,8 @@ html:not(.js) .selector__reset { display: none; }
 .logo-grid li { height: 76px; display: flex; align-items: center; justify-content: center; padding: 0.6rem 0.9rem; background: var(--wp--preset--color--white); border: 1px solid var(--wp--preset--color--hairline); border-radius: 10px; }
 .logo-grid li img { max-height: 48px; max-width: 100%; width: auto; object-fit: contain; }
 .logo-grid li.is-dark { background: #111; border-color: #111; }
+/* A wide lockup needs two cells so its supporting line stays legible */
+.logo-grid li.is-wide { grid-column: span 2; }
 .logo-grid li.is-placeholder { border-style: dashed; color: var(--wp--preset--color--muted); font-family: var(--wp--preset--font-family--heading); font-weight: 600; font-size: 0.8rem; text-align: center; }
 .logo-grid.is-compact li { height: 64px; }
 .has-paper-background-color .logo-grid li { border-color: #E2E0D8; }
