@@ -246,16 +246,16 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
 .site-header:has(.site-nav.is-open) { backdrop-filter: none !important; }
 .site-header__inner {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: var(--wp--preset--spacing--40);
   min-height: var(--wp--custom--header-height);
   padding: var(--wp--preset--spacing--20) var(--wp--style--root--padding);
 }
-.site-logo { justify-self: start; display: block; }
-.site-logo img { height: clamp(3.25rem, 6vw, 4.5rem); width: auto; }
+/* Logo and wordmark are one link, so the mark and the name never separate */
+.site-brand { justify-self: start; display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+.site-brand img { height: clamp(3.25rem, 6vw, 4.5rem); width: auto; }
 .site-title {
-  justify-self: end;
   font-family: var(--wp--preset--font-family--heading);
   font-weight: 600;
   font-size: 1.05rem;
@@ -264,14 +264,14 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
   text-decoration: none;
   white-space: nowrap;
 }
-.site-title:hover { color: var(--wp--preset--color--warm); }
+.site-brand:hover .site-title { color: var(--wp--preset--color--warm); }
 
 /* Navigation block */
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.35rem clamp(1rem, 2.6vw, 2.75rem);
+  justify-content: flex-end;
+  gap: 0.35rem clamp(1rem, 2.2vw, 2.25rem);
   list-style: none;
   margin: 0; padding: 0;
 }
@@ -294,33 +294,33 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
 @media (max-width: 960px) {
   .site-title { font-size: 0.95rem; }
 }
-/* Small laptops: the same row with less space between menu items */
-@media (max-width: 1180px) and (min-width: 1100px) {
-  .site-header__inner { grid-template-columns: auto 1fr auto; }
-  .site-logo { min-width: max-content; }
-  .site-header .site-nav__list { flex-wrap: nowrap; gap: 0.35rem 1.4rem; }
-  .site-header .site-nav__list a { white-space: nowrap; }
+@media (max-width: 420px) {
+  .site-brand { gap: 0.5rem; }
+  .site-brand img { height: 2.4rem; }
+  .site-title { font-size: 0.9rem; }
 }
-/* Tablets: logo and wordmark on top, the menu on its own row */
-@media (max-width: 1099px) and (min-width: 820px) {
+/* Small laptops: one row, tighter menu spacing */
+@media (max-width: 1180px) and (min-width: 940px) {
+  .site-brand img { height: 3rem; }
+  .site-header .site-nav__list { flex-wrap: nowrap; gap: 0.35rem 1.25rem; }
+  .site-header .site-nav__list a { white-space: nowrap; letter-spacing: 0.1em; }
+}
+/* Tablets: the brand lockup on top, the menu on its own row beneath it */
+@media (max-width: 939px) and (min-width: 820px) {
   .site-header__inner {
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "logo title" "nav nav";
+    grid-template-columns: 1fr;
     row-gap: 0;
     min-height: 0;
     padding-block: 0.4rem 0.2rem;
   }
-  .site-logo { grid-area: logo; }
-  .site-logo img { height: 2.6rem; }
-  .site-title { grid-area: title; }
-  .site-nav { grid-area: nav; }
-  .site-header .site-nav__list { flex-wrap: nowrap; gap: 0.35rem 1.1rem; }
+  .site-brand img { height: 2.6rem; }
+  .site-header .site-nav__list { flex-wrap: nowrap; justify-content: center; gap: 0.35rem 1.1rem; }
   .site-header .site-nav__list a { white-space: nowrap; letter-spacing: 0.1em; }
 }
 /* Narrow screens: the menu becomes the full-screen overlay below the width where its items would wrap */
 @media (max-width: 819px) {
-  .site-header__inner { grid-template-columns: auto 1fr auto; }
-  .site-title { justify-self: start; }
+  .site-header__inner { grid-template-columns: auto 1fr; }
+  .site-nav { justify-self: end; }
   .js .site-nav__toggle {
     display: inline-flex; align-items: center; justify-content: center;
     width: 2.75rem; height: 2.75rem;
@@ -341,8 +341,9 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
     width: 2.75rem; height: 2.75rem;
     background: none; border: 0; color: var(--wp--preset--color--white); cursor: pointer; padding: 0;
   }
-  html:not(.js) .site-header__inner { grid-template-columns: auto 1fr; }
-  html:not(.js) .site-nav { grid-column: 1 / -1; }
+  html:not(.js) .site-header__inner { grid-template-columns: 1fr; }
+  html:not(.js) .site-nav { grid-column: 1 / -1; justify-self: stretch; }
+  html:not(.js) .site-header .site-nav__list { justify-content: center; }
 }
 
 /* ---------- Site footer (template part) ---------- */
