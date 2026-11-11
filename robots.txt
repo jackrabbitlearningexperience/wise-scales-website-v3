@@ -7,5 +7,12 @@ Disallow: /manuals/
 Disallow: /translations/
 Disallow: /publications/
 Disallow: /worksheets/
+Disallow: /manual/
+Disallow: /training/
+Disallow: /data/
+Disallow: /map/
+Disallow: /course/
+Disallow: /materials/
+Disallow: /contact/
 
 Sitemap: https://wisescales.org/sitemap.xml
