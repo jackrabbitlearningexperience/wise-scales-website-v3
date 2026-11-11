@@ -670,7 +670,7 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
 .datamap__preview { position: relative; display: block; max-width: 32rem; margin-inline: auto; border: 1px solid var(--wp--preset--color--hairline); border-radius: var(--wp--custom--radius); overflow: hidden; background: var(--wp--preset--color--white); box-shadow: 0 6px 18px rgb(15 16 26 / 0.08); transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
 .datamap__preview img { display: block; width: 100%; height: auto; }
 .datamap__preview:hover { transform: translateY(-3px); border-color: var(--wp--preset--color--blue); box-shadow: 0 14px 30px rgb(15 16 26 / 0.16); }
-.datamap__preview:hover .datamap__preview:hover @media (prefers-reduced-motion: reduce) { .datamap__preview, 
+@media (prefers-reduced-motion: reduce) { .datamap__preview { transition: none; } .datamap__preview:hover { transform: none; } }
 .is-map-cover { background: var(--wp--preset--color--blue-deep); }
 .is-map-cover .wp-cover__media { object-position: 50% 35%; }
 .page-cover.is-map-cover::before { background: linear-gradient(180deg, rgb(13 70 119 / 0.15) 0%, rgb(13 70 119 / 0.35) 45%, rgb(13 70 119 / 0.92) 100%); }
