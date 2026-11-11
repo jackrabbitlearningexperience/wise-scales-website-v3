@@ -503,10 +503,12 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
 .is-style-glass p { margin: 0; font-size: 0.95rem; line-height: 1.45; color: var(--wp--custom--on-dark); }
 .glass-steps {
   list-style: none; padding: 0; margin: var(--wp--preset--spacing--40) 0 var(--wp--preset--spacing--30);
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); gap: var(--wp--preset--spacing--30);
+  display: flex; flex-wrap: wrap; gap: var(--wp--preset--spacing--30);
   counter-reset: step;
 }
+/* Steps size to their own label, so one long step does not stretch the rest */
 .glass-steps li {
+  flex: 1 1 auto; min-width: 7rem;
   counter-increment: step;
   font-family: var(--wp--preset--font-family--heading); font-weight: 700; font-size: 1.1rem;
 }
