@@ -300,13 +300,13 @@ video.wp-cover__media::-webkit-media-controls-start-playback-button { display: n
   .site-title { font-size: 0.9rem; }
 }
 /* Small laptops: one row, tighter menu spacing */
-@media (max-width: 1180px) and (min-width: 940px) {
+@media (max-width: 1180px) and (min-width: 1061px) {
   .site-brand img { height: 3rem; }
   .site-header .site-nav__list { flex-wrap: nowrap; gap: 0.35rem 1.25rem; }
   .site-header .site-nav__list a { white-space: nowrap; letter-spacing: 0.1em; }
 }
 /* Tablets: the brand lockup on top, the menu on its own row beneath it */
-@media (max-width: 939px) and (min-width: 820px) {
+@media (max-width: 1060px) and (min-width: 820px) {
   .site-header__inner {
     grid-template-columns: 1fr;
     row-gap: 0;
